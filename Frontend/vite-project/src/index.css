@@ -1,0 +1,120 @@
+/* Global responsive styles */
+:root {
+  color-scheme: light;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+  background-color: #f6f8fc;
+  color: #20232a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #ffffff 0%, #edf2fb 100%);
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.app-shell {
+  width: min(1200px, 100%);
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  padding: 24px;
+}
+
+.dwlink-wrapper {
+  margin-bottom: 24px;
+}
+
+.dwlink-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.dwlink-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background: #2e64ff;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.dwlink-link:hover,
+.dwlink-link:focus-visible {
+  background: #1f3fe7;
+  transform: translateY(-1px);
+}
+
+.dwlink-link.active {
+  background: #2e64ff;
+  color: #ffffff;
+}
+
+.dwlink-link.active:hover,
+.dwlink-link.active:focus-visible {
+  background: #1f3fe7;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    padding: 20px;
+  }
+
+  .dwlink-nav {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  #root {
+    padding: 16px;
+  }
+
+  .dwlink-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dwlink-link {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+  }
+}

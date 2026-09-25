@@ -1,0 +1,8 @@
+frontend request backend
+
+    url  => localhost:8000
+    c => create =>post
+    r => read => get
+    u => update => put|patch
+    d => delete => delete
+    method => post|get|patch|delete

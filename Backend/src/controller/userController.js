@@ -30,6 +30,8 @@ export const readAllUserController = async (req, res, next) => {
   });
 };
 export const userDetailsController = async (req, res, next) => {
+// console.log("first")
+
   let result = await User.findById(req.params.id);
   res.json({
     sucesss: true,

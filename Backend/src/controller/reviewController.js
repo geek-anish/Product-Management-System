@@ -22,7 +22,11 @@ export const readAllreviewController = async (req, res, next) => {
   };
 
   export const reviewDetailsController = async (req, res, next) => {
+      
+    
       let result=await Review.findById(req.params.id).populate("product").populate("user");
+        // let result = await Review.findById(req.params.id);
+      
       res.json({
         sucesss: true,
         message: "review read sucessfully",

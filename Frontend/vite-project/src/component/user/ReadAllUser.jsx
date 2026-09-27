@@ -65,10 +65,7 @@ const ReadAllUser = () => {
               <span className="user-label">Email</span>
               <span className="user-value">{item.email}</span>
             </div>
-            <div className="user-card-row">
-              <span className="user-label">Password</span>
-              <span className="user-value">{item.password}</span>
-            </div>
+            
             <div className="user-card-row">
               <span className="user-label">Profile Image</span>
               <span className="user-value">

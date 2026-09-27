@@ -6,15 +6,13 @@ import { toast } from "react-toastify";
 const UpdateUser = () => {
   // name, price,quantity, isDamage
 
- 
-
-   const [name, setName] = useState("");
-      const [email, setEmail] = useState("");
-      const [password, setPassword] = useState("");
-      const [profileImage, setProfileImage] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [profileImage, setProfileImage] = useState("");
 
   const params = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const getData = async () => {
     try {
@@ -26,13 +24,13 @@ const UpdateUser = () => {
       let data = result.data.result;
       console.log(data.name);
       console.log(data.email);
-      
 
-      setName(data.name)
-    setEmail(data.email)
-    setPassword(data.password)
-    setProfileImage(data.profileImage)
-    } catch (error) {}
+      setName(data.name);
+      setEmail(data.email);
+      setPassword(data.password);
+      setProfileImage(data.profileImage);
+    } 
+    catch (error) {}
   };
 
   useEffect(() => {
@@ -41,7 +39,7 @@ const UpdateUser = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // prevents defuslts behvsviour of refreshing
-   
+
     let data = {
       name: name,
       email: email,
@@ -55,16 +53,14 @@ const UpdateUser = () => {
         method: "patch",
         data: data,
       });
-      navigate(`/user/${params.id}`)
+      navigate(`/user/${params.id}`);
       console.log(result);
 
-      
-
-      toast.success(result.data.message)
-    setName("")
-    setEmail("")
-    setPassword("")
-    setProfileImage("")
+      toast.success(result.data.message);
+      setName("");
+      setEmail("");
+      setPassword("");
+      setProfileImage("");
     } catch (error) {
       console.log(error.response);
       toast.error(error.response.data.message);
@@ -109,17 +105,7 @@ const UpdateUser = () => {
             }}
           ></input>
         </div>
-        <div>
-          <label htmlFor="password">password</label>
-          <input
-            type="text"
-            id="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          ></input>
-        </div>
+
         <div>
           <label htmlFor="profileImage">profileImage</label>
           <input

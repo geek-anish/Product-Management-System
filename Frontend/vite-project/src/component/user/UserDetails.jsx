@@ -28,14 +28,14 @@ const UserDetails = () => {
     getData();
   }, []);
 
-  console.log(data)
+  // console.log(data)
   return (
   <div>
     
     <h1> user details</h1>
     <p>name is {data.name}</p>
     <p>email is {data.email}</p>
-    <p>password is {data.password}</p>
+    
     <p>profileImage is {data.profileImage}</p>
     
   </div>

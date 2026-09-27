@@ -26,6 +26,35 @@ const ReadAllReview = () => {
 
   console.log(data);
 
+  const handleView = (id) => {
+    return (e) => {
+      navigate(`/review/${id}`);
+    };
+  };
+
+  const handleUpdate = (id) => {
+    return (e) => {
+      navigate(`/review/update/${id}`);
+    };
+  };
+
+  const handleDelete = (id) => {
+    return async (e) => {
+      try {
+        let result = await axios({
+          url: `http://localhost:8000/review/${id}`,
+          method: "delete",
+        });
+        getData();
+
+        toast.success(result.data.message);
+      } catch (error) {
+        toast.error(error.response.data.message);
+      }
+    };
+  };
+
+
   return (
     <section className="product-list-container">
       <div className="product-grid">
@@ -43,6 +72,9 @@ const ReadAllReview = () => {
               <span className="product-label">Description</span>
               <span className="product-value">{item?.description}</span>
             </div>
+            <button onClick={handleView(item.id)}>View</button>
+            <button onClick={handleUpdate(item.id)}>Update</button>
+            <button onClick={handleDelete(item.id)}>Delete</button>
           </article>
         ))}
       </div>
